@@ -1,11 +1,72 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Disciple's Creed — Discipleship with a Clear Creed"
+	description="A discipleship ministry centered on a clear creed: what it means to follow Jesus and help others do the same."
+>
+	<section
+		class="relative bg-transparent px-6 py-24 text-center sm:py-32"
+	>
+		<div class="relative mx-auto max-w-3xl">
+			<h1 class="font-serif text-4xl font-medium text-parchment sm:text-5xl">
+				Discipleship with a clear creed.
+			</h1>
+			<p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
+				Disciple's Creed exists to help people follow Jesus well, and to help them teach others to
+				do the same — through trainings built on a clear, stated set of convictions.
+			</p>
+			<div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+				<a
+					href="/connect"
+					class="rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gold-bright"
+				>
+					Start Discipleship
+				</a>
+				<a
+					href="/trainings"
+					class="text-sm font-medium text-parchment underline-offset-4 hover:text-gold hover:underline"
+				>
+					Explore the trainings →
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="border-t border-gold-deep/20 bg-surface/40 px-6 py-20">
+		<div class="mx-auto max-w-5xl">
+			<h2 class="text-center font-serif text-2xl font-medium text-parchment sm:text-3xl">
+				Ways to train
+			</h2>
+			<div class="mt-10 grid gap-6 sm:grid-cols-3">
+				<div class="rounded-2xl border border-gold-deep/30 bg-surface p-6">
+					<p class="font-serif text-lg text-parchment">One-on-One</p>
+					<p class="mt-2 text-sm leading-relaxed text-muted">
+						Personal discipleship, paced to where you are right now.
+					</p>
+				</div>
+				<div class="rounded-2xl border border-gold-deep/30 bg-surface p-6">
+					<p class="font-serif text-lg text-parchment">Cohorts</p>
+					<p class="mt-2 text-sm leading-relaxed text-muted">
+						Walk through the trainings together with a small group.
+					</p>
+				</div>
+				<div class="rounded-2xl border border-gold-deep/30 bg-surface p-6">
+					<p class="font-serif text-lg text-parchment">Workshops</p>
+					<p class="mt-2 text-sm leading-relaxed text-muted">
+						Focused, single-session trainings on a specific topic.
+					</p>
+				</div>
+			</div>
+			<div class="mt-10 text-center">
+				<a
+					href="/trainings"
+					class="text-sm font-medium text-parchment underline-offset-4 hover:text-gold hover:underline"
+				>
+					See all trainings →
+				</a>
+			</div>
+		</div>
+	</section>
 </Layout>

@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const articles = [
+	{ heading: 'On Christ' },
+	{ heading: 'On Discipleship' },
+	{ heading: 'On the Church' },
+	{ heading: 'On Mission' },
+];
+---
+
+<Layout
+	title="Creed — What We Believe — Disciple's Creed"
+	description="What Disciple's Creed believes about discipleship, and the convictions behind every training."
+>
+	<section class="mx-auto max-w-3xl px-6 py-20 text-center sm:py-28">
+		<h1 class="font-serif text-4xl font-medium text-parchment sm:text-5xl">What We Believe</h1>
+		<p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
+			Every training here is built on a clear set of convictions about what discipleship is — and
+			isn't. This is the creed behind the name.
+		</p>
+	</section>
+
+	<section class="border-t border-gold-deep/20 px-6 py-20">
+		<div class="mx-auto max-w-2xl divide-y divide-gold-deep/20">
+			{
+				articles.map((article) => (
+					<div class="py-8 first:pt-0 last:pb-0">
+						<h2 class="font-serif text-xl font-medium text-parchment">{article.heading}</h2>
+						<p class="mt-3 text-base leading-relaxed text-muted">
+							[Add the statement of belief for "{article.heading}" here.]
+						</p>
+					</div>
+				))
+			}
+		</div>
+	</section>
+</Layout>

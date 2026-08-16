@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const formatLabels: Record<string, string> = {
+	'one-on-one': 'One-on-One',
+	cohort: 'Cohort',
+	workshop: 'Workshop',
+	'self-paced': 'Self-Paced',
+};
+
+const trainings = (await getCollection('trainings')).sort(
+	(a, b) => (a.data.order ?? Infinity) - (b.data.order ?? Infinity),
+);
+---
+
+<Layout
+	title="Trainings — Disciple's Creed"
+	description="Trainings for following Jesus and learning to disciple others — one-on-one, in cohorts, and through workshops."
+>
+	<section class="mx-auto max-w-3xl px-6 py-20 text-center sm:py-28">
+		<h1 class="font-serif text-4xl font-medium text-parchment sm:text-5xl">Trainings</h1>
+		<p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
+			However you learn best — one-on-one, with a small group, or in a single session — there's a
+			training here built on the same set of convictions.
+		</p>
+	</section>
+
+	<section class="border-t border-gold-deep/20 px-6 py-20">
+		<div class="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{
+				trainings.map((training) => (
+					<a
+						href={`/trainings/${training.id}`}
+						class="flex flex-col rounded-2xl border border-gold-deep/30 bg-surface p-6 transition-colors hover:border-gold-bright"
+					>
+						<span class="text-xs font-medium uppercase tracking-wide text-gold">
+							{formatLabels[training.data.format]}
+						</span>
+						<h2 class="mt-2 font-serif text-xl font-medium text-parchment">{training.data.title}</h2>
+						<p class="mt-3 flex-1 text-sm leading-relaxed text-muted">{training.data.summary}</p>
+						<div class="mt-4 flex flex-wrap gap-x-3 text-xs text-muted/80">
+							{training.data.audience && <span>{training.data.audience}</span>}
+							{training.data.duration && <span>{training.data.duration}</span>}
+						</div>
+					</a>
+				))
+			}
+		</div>
+	</section>
+</Layout>

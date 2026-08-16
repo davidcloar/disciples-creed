@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const typeLabels: Record<string, string> = {
+	article: 'Article',
+	video: 'Video',
+	download: 'Download',
+	reading: 'Reading',
+};
+
+const resources = (await getCollection('resources')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const dateFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
+---
+
+<Layout
+	title="Resources — Disciple's Creed"
+	description="Articles, videos, downloads, and recommended reading to go deeper on discipleship."
+>
+	<section class="mx-auto max-w-3xl px-6 py-20 text-center sm:py-28">
+		<h1 class="font-serif text-4xl font-medium text-parchment sm:text-5xl">Resources</h1>
+		<p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
+			Articles, videos, downloads, and recommended reading for going deeper between trainings.
+		</p>
+	</section>
+
+	<section class="border-t border-gold-deep/20 px-6 py-20">
+		<div class="mx-auto max-w-3xl divide-y divide-gold-deep/20">
+			{
+				resources.map((resource) => (
+					<div class="flex flex-col gap-2 py-6 first:pt-0 last:pb-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+						<div>
+							<span class="text-xs font-medium uppercase tracking-wide text-gold">
+								{typeLabels[resource.data.type]}
+							</span>
+							{resource.data.url ? (
+								<a
+									href={resource.data.url}
+									class="block font-serif text-lg text-parchment hover:text-gold"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									{resource.data.title}
+								</a>
+							) : (
+								<p class="font-serif text-lg text-parchment">{resource.data.title}</p>
+							)}
+							<p class="mt-1 text-sm leading-relaxed text-muted">{resource.data.summary}</p>
+						</div>
+						<span class="whitespace-nowrap text-xs text-muted/80">
+							{dateFormatter.format(resource.data.date)}
+						</span>
+					</div>
+				))
+			}
+		</div>
+	</section>
+</Layout>
