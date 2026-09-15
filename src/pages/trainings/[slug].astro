@@ -23,7 +23,7 @@ const formatLabels: Record<string, string> = {
 
 <Layout title={`${training.data.title} — Disciple's Creed`} description={training.data.summary}>
 	<article class="mx-auto max-w-2xl px-6 py-20 sm:py-28">
-		<a href="/trainings" class="text-sm text-muted hover:text-gold">← All trainings</a>
+		<a href="/trainings" class="text-sm text-muted transition-colors hover:text-gold">← All trainings</a>
 
 		<span class="mt-6 block text-xs font-medium uppercase tracking-wide text-gold">
 			{formatLabels[training.data.format]}
@@ -36,14 +36,14 @@ const formatLabels: Record<string, string> = {
 			{training.data.duration && <span>{training.data.duration}</span>}
 		</div>
 
-		<div class="mt-8 space-y-4 text-base leading-relaxed text-parchment/90 [&_p]:leading-relaxed">
+		<div class="reveal mt-8 space-y-4 text-base leading-relaxed text-parchment/90 [&_h2]:mt-8 [&_h2]:font-serif [&_h2]:text-lg [&_h2]:font-medium [&_h2]:text-parchment [&_li]:text-muted [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:space-y-1.5 [&_ul]:pl-4 [&_ul]:text-sm">
 			<Content />
 		</div>
 
-		<div class="mt-10">
+		<div class="reveal mt-10">
 			<a
 				href="/connect"
-				class="inline-block rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gold-bright"
+				class="inline-block rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-all hover:bg-gold-bright hover:shadow-[0_0_20px_rgba(198,161,92,0.35)] active:scale-95"
 			>
 				{training.data.cta ?? 'Get in touch to start'}
 			</a>

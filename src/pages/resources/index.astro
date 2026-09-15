@@ -27,11 +27,11 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'n
 		</p>
 	</section>
 
-	<section class="border-t border-gold-deep/20 px-6 py-20">
+	<section class="reveal border-t border-gold-deep/20 px-6 py-20">
 		<div class="mx-auto max-w-3xl divide-y divide-gold-deep/20">
 			{
 				resources.map((resource) => (
-					<div class="flex flex-col gap-2 py-6 first:pt-0 last:pb-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+					<div class="flex flex-col gap-2 py-6 transition-colors first:pt-0 last:pb-0 hover:bg-surface/30 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 sm:px-3 sm:rounded-lg">
 						<div>
 							<span class="text-xs font-medium uppercase tracking-wide text-gold">
 								{typeLabels[resource.data.type]}
@@ -39,7 +39,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'n
 							{resource.data.url ? (
 								<a
 									href={resource.data.url}
-									class="block font-serif text-lg text-parchment hover:text-gold"
+									class="block font-serif text-lg text-parchment transition-colors hover:text-gold"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -57,5 +57,8 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'n
 				))
 			}
 		</div>
+		{resources.length === 0 && (
+			<p class="mx-auto max-w-3xl text-center text-muted">Resources coming soon.</p>
+		)}
 	</section>
 </Layout>

@@ -9,9 +9,12 @@ const navItems = [
 ];
 ---
 
-<header class="border-b border-gold-deep/30">
+<header
+	class="sticky top-0 z-50 border-b border-gold-deep/20 bg-ink/80 backdrop-blur-md"
+	transition:persist
+>
 	<div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-5">
-		<a href="/" class="flex items-center gap-2.5">
+		<a href="/" class="flex items-center gap-2.5 transition-opacity hover:opacity-80">
 			<img src={logoIcon.src} alt="" width="24" height="33" class="h-8 w-auto" />
 			<span class="flex flex-col leading-tight">
 				<span class="font-serif text-xl font-medium text-parchment">Disciple's Creed</span>
@@ -29,7 +32,7 @@ const navItems = [
 		</nav>
 		<a
 			href="/connect"
-			class="rounded-full bg-gold px-5 py-2 text-sm font-medium text-ink transition-colors hover:bg-gold-bright"
+			class="rounded-full bg-gold px-5 py-2 text-sm font-medium text-ink transition-all hover:bg-gold-bright hover:shadow-[0_0_16px_rgba(198,161,92,0.35)] active:scale-95"
 		>
 			Start Discipleship
 		</a>

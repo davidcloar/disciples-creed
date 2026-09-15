@@ -14,7 +14,7 @@ import Layout from '../layouts/Layout.astro';
 		</p>
 	</section>
 
-	<section class="border-t border-gold-deep/20 px-6 py-20">
+	<section class="reveal border-t border-gold-deep/20 px-6 py-20">
 		<form
 			name="connect"
 			method="POST"
@@ -36,7 +36,7 @@ import Layout from '../layouts/Layout.astro';
 					name="name"
 					type="text"
 					required
-					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment focus:border-gold focus:outline-none"
+					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment transition-colors focus:border-gold focus:outline-none"
 				/>
 			</div>
 
@@ -47,7 +47,7 @@ import Layout from '../layouts/Layout.astro';
 					name="email"
 					type="email"
 					required
-					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment focus:border-gold focus:outline-none"
+					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment transition-colors focus:border-gold focus:outline-none"
 				/>
 			</div>
 
@@ -56,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
 				<select
 					id="interest"
 					name="interest"
-					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment focus:border-gold focus:outline-none"
+					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment transition-colors focus:border-gold focus:outline-none"
 				>
 					<option>Starting discipleship</option>
 					<option>Asking about a training</option>
@@ -72,20 +72,20 @@ import Layout from '../layouts/Layout.astro';
 					name="message"
 					rows="5"
 					required
-					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment focus:border-gold focus:outline-none"
+					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment transition-colors focus:border-gold focus:outline-none"
 				></textarea>
 			</div>
 
 			<button
 				type="submit"
-				class="rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-gold-bright"
+				class="rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-all hover:bg-gold-bright hover:shadow-[0_0_20px_rgba(198,161,92,0.35)] active:scale-95"
 			>
 				Send
 			</button>
 		</form>
 	</section>
 
-	<section class="border-t border-gold-deep/20 bg-surface/40 px-6 py-20 text-center">
+	<section class="reveal border-t border-gold-deep/20 bg-surface/40 px-6 py-20 text-center">
 		<h2 class="font-serif text-2xl font-medium text-parchment sm:text-3xl">Support the Ministry</h2>
 		<p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted">
 			[Add a giving link here once a platform is chosen — e.g. Tithe.ly, PayPal, or a giving page

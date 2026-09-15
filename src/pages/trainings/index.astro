@@ -26,13 +26,14 @@ const trainings = (await getCollection('trainings')).sort(
 		</p>
 	</section>
 
-	<section class="border-t border-gold-deep/20 px-6 py-20">
+	<section class="reveal border-t border-gold-deep/20 px-6 py-20">
 		<div class="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{
-				trainings.map((training) => (
+				trainings.map((training, i) => (
 					<a
 						href={`/trainings/${training.id}`}
-						class="flex flex-col rounded-2xl border border-gold-deep/30 bg-surface p-6 transition-colors hover:border-gold-bright"
+						class="group flex flex-col rounded-2xl border border-gold-deep/30 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_8px_28px_rgba(198,161,92,0.08)]"
+						style={`transition-delay: ${i * 0.06}s`}
 					>
 						<span class="text-xs font-medium uppercase tracking-wide text-gold">
 							{formatLabels[training.data.format]}
@@ -43,6 +44,9 @@ const trainings = (await getCollection('trainings')).sort(
 							{training.data.audience && <span>{training.data.audience}</span>}
 							{training.data.duration && <span>{training.data.duration}</span>}
 						</div>
+						<span class="mt-4 text-xs font-medium text-gold opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+							View training →
+						</span>
 					</a>
 				))
 			}
