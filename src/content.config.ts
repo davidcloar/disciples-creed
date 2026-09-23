@@ -26,6 +26,7 @@ const resources = defineCollection({
 		date: z.coerce.date(),
 		url: z.string().optional(),
 		heroImage: z.string().optional(),
+		comingSoon: z.string().optional(),
 		topics: z.array(z.string()).optional(),
 	}),
 });

@@ -73,7 +73,11 @@ const listResources = resources.filter((r) => !r.data.heroImage);
 								<p class="mt-1 font-serif text-lg text-parchment">{resource.data.title}</p>
 							)}
 							<p class="mt-2 flex-1 text-sm leading-relaxed text-muted">{resource.data.summary}</p>
-							{resource.data.url && (
+							{resource.data.comingSoon ? (
+								<p class="mt-4 text-xs font-medium text-muted/70">
+									Available {resource.data.comingSoon}
+								</p>
+							) : resource.data.url ? (
 								<a
 									href={resource.data.url}
 									target="_blank"
@@ -82,7 +86,7 @@ const listResources = resources.filter((r) => !r.data.heroImage);
 								>
 									Get the book →
 								</a>
-							)}
+							) : null}
 						</div>
 					</div>
 				))}
