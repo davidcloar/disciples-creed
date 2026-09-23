@@ -6,32 +6,96 @@ const typeLabels: Record<string, string> = {
 	article: 'Article',
 	video: 'Video',
 	download: 'Download',
-	reading: 'Reading',
+	reading: 'Book',
 };
 
 const resources = (await getCollection('resources')).sort(
 	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
-const dateFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
+const bookResources = resources.filter((r) => r.data.heroImage);
+const listResources = resources.filter((r) => !r.data.heroImage);
 ---
 
 <Layout
 	title="Resources — Disciple's Creed"
-	description="Articles, videos, downloads, and recommended reading to go deeper on discipleship."
+	description="Books, articles, and recommended reading to go deeper on discipleship."
 >
 	<section class="mx-auto max-w-3xl px-6 py-20 text-center sm:py-28">
 		<h1 class="font-serif text-4xl font-medium text-parchment sm:text-5xl">Resources</h1>
 		<p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
-			Articles, videos, downloads, and recommended reading for going deeper between trainings.
+			Books and resources from Jeff Lewis for going deeper on biblical disciple-making.
 		</p>
 	</section>
 
-	<section class="reveal border-t border-gold-deep/20 px-6 py-20">
-		<div class="mx-auto max-w-3xl divide-y divide-gold-deep/20">
-			{
-				resources.map((resource) => (
-					<div class="flex flex-col gap-2 py-6 transition-colors first:pt-0 last:pb-0 hover:bg-surface/30 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 sm:px-3 sm:rounded-lg">
+	<!-- Book cards with cover images -->
+	{bookResources.length > 0 && (
+		<section class="reveal border-t border-gold-deep/20 px-6 py-20">
+			<div class="mx-auto grid max-w-4xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
+				{bookResources.map((resource) => (
+					<div class="group flex flex-col">
+						{resource.data.url ? (
+							<a
+								href={resource.data.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="block overflow-hidden rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_16px_48px_rgba(198,161,92,0.12)]"
+							>
+								<img
+									src={resource.data.heroImage}
+									alt={resource.data.title}
+									class="w-full object-cover"
+								/>
+							</a>
+						) : (
+							<div class="overflow-hidden rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+								<img
+									src={resource.data.heroImage}
+									alt={resource.data.title}
+									class="w-full object-cover"
+								/>
+							</div>
+						)}
+						<div class="mt-4 flex flex-col flex-1">
+							<span class="text-xs font-medium uppercase tracking-wide text-gold">
+								{typeLabels[resource.data.type]}
+							</span>
+							{resource.data.url ? (
+								<a
+									href={resource.data.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="mt-1 font-serif text-lg text-parchment transition-colors hover:text-gold"
+								>
+									{resource.data.title}
+								</a>
+							) : (
+								<p class="mt-1 font-serif text-lg text-parchment">{resource.data.title}</p>
+							)}
+							<p class="mt-2 flex-1 text-sm leading-relaxed text-muted">{resource.data.summary}</p>
+							{resource.data.url && (
+								<a
+									href={resource.data.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="mt-4 inline-block text-xs font-medium text-gold underline-offset-4 transition-colors hover:text-gold-bright hover:underline"
+								>
+									Get the book →
+								</a>
+							)}
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+	)}
+
+	<!-- List resources (no cover image) -->
+	{listResources.length > 0 && (
+		<section class="reveal border-t border-gold-deep/20 px-6 py-20">
+			<div class="mx-auto max-w-3xl divide-y divide-gold-deep/20">
+				{listResources.map((resource) => (
+					<div class="flex flex-col gap-2 py-6 transition-colors first:pt-0 last:pb-0 hover:bg-surface/30 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 sm:rounded-lg sm:px-3">
 						<div>
 							<span class="text-xs font-medium uppercase tracking-wide text-gold">
 								{typeLabels[resource.data.type]}
@@ -50,15 +114,15 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'n
 							)}
 							<p class="mt-1 text-sm leading-relaxed text-muted">{resource.data.summary}</p>
 						</div>
-						<span class="whitespace-nowrap text-xs text-muted/80">
-							{dateFormatter.format(resource.data.date)}
-						</span>
 					</div>
-				))
-			}
-		</div>
-		{resources.length === 0 && (
+				))}
+			</div>
+		</section>
+	)}
+
+	{resources.length === 0 && (
+		<section class="reveal border-t border-gold-deep/20 px-6 py-20">
 			<p class="mx-auto max-w-3xl text-center text-muted">Resources coming soon.</p>
-		)}
-	</section>
+		</section>
+	)}
 </Layout>
