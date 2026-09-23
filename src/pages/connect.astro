@@ -9,8 +9,8 @@ import Layout from '../layouts/Layout.astro';
 	<section class="mx-auto max-w-2xl px-6 py-20 text-center sm:py-28">
 		<h1 class="font-serif text-4xl font-medium text-parchment sm:text-5xl">Let's Connect</h1>
 		<p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
-			Whether you want to start discipleship, ask about a training, or support the ministry,
-			reach out below.
+			Whether you have questions about disciple-making, are interested in coaching, or are hosting
+			a workshop for your church's leadership, reach out below.
 		</p>
 	</section>
 
@@ -41,6 +41,26 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 
 			<div>
+				<label for="church" class="block text-sm font-medium text-parchment">Church or Organization</label>
+				<input
+					id="church"
+					name="church"
+					type="text"
+					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment transition-colors focus:border-gold focus:outline-none"
+				/>
+			</div>
+
+			<div>
+				<label for="position" class="block text-sm font-medium text-parchment">Position / Role</label>
+				<input
+					id="position"
+					name="position"
+					type="text"
+					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment transition-colors focus:border-gold focus:outline-none"
+				/>
+			</div>
+
+			<div>
 				<label for="email" class="block text-sm font-medium text-parchment">Email</label>
 				<input
 					id="email"
@@ -58,10 +78,9 @@ import Layout from '../layouts/Layout.astro';
 					name="interest"
 					class="mt-2 w-full rounded-lg border border-gold-deep/40 bg-surface px-4 py-2 text-parchment transition-colors focus:border-gold focus:outline-none"
 				>
-					<option>Starting discipleship</option>
-					<option>Asking about a training</option>
-					<option>Supporting the ministry</option>
-					<option>Something else</option>
+					<option>Coaching</option>
+					<option>Workshop</option>
+					<option>Other</option>
 				</select>
 			</div>
 

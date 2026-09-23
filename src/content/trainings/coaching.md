@@ -7,7 +7,7 @@ duration: "3–5 months"
 topics: ["disciple-making", "church leadership", "biblical foundations"]
 featured: true
 order: 1
-cta: "Get in touch to start"
+cta: "Coaching Conversation"
 ---
 
 Disciple's Creed coaches vocational and lay church leaders through the biblical foundations and practice of disciple-making — available via Zoom or onsite.

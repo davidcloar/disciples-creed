@@ -16,7 +16,7 @@ The Disciple Making Church Workshop (DMCW) is an eight-hour workshop that welcom
 
 - **Workshop One** — Introduction: Definitions, Direction, Movements and Goals
 - **Workshop Two** — The Plot and Setting of the Story of God
-- **Workshop Three** — Lovers of the Word *(The Five Essentials of Biblical Disciple Making)*
+- **Workshop Three** — Lovers of God & the Word *(The Five Essentials of Biblical Disciple Making)*
 - **Workshop Four** — Apprehending the Glory of God
 - **Workshop Five** — Union With Christ
 - **Workshop Six** — Kingdom of God
