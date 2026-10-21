@@ -1,7 +1,7 @@
 ---
 title: "Personal Development Cohort"
 summary: "Establish your own disciple-making group under the guidance of Jeff Lewis, with resources for utilizing Scripture as the primary source for disciple-making. 6 to 12 months, limited spots available."
-audience: "Disciple-makers and church leaders"
+audience: "Anyone seeking to establish their own disciple-making group"
 format: "cohort"
 duration: "6–12 months"
 topics: ["disciple-making", "scripture", "personal development", "community"]

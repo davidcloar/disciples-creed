@@ -41,5 +41,5 @@ Topics are determined after an introductory and investigative conversation, sele
 
 *(For a limited time the Coaching is Pro Bono)*
 
-- **3-month engagement** — two sessions per month, six 60–90 minute Zoom sessions.
-- **5-month engagement** — two sessions per month, ten 60–90 minute Zoom sessions.
+- **3-month engagement** — two sessions per month, six 60–90 minute Zoom sessions. ($750 value)
+- **5-month engagement** — two sessions per month, ten 60–90 minute Zoom sessions. ($1,000 value)
