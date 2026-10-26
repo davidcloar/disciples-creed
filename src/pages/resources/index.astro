@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 const typeLabels: Record<string, string> = {
@@ -13,7 +13,14 @@ const resources = (await getCollection('resources')).sort(
 	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
-const bookResources = resources.filter((r) => r.data.heroImage);
+const bookResources = await Promise.all(
+	resources
+		.filter((r) => r.data.heroImage)
+		.map(async (r) => {
+			const { Content } = await render(r);
+			return { resource: r, Content };
+		}),
+);
 const listResources = resources.filter((r) => !r.data.heroImage);
 ---
 
@@ -32,7 +39,7 @@ const listResources = resources.filter((r) => !r.data.heroImage);
 	{bookResources.length > 0 && (
 		<section class="reveal border-t border-gold-deep/20 px-6 py-20">
 			<div class="mx-auto grid max-w-4xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
-				{bookResources.map((resource) => (
+				{bookResources.map(({ resource, Content }) => (
 					<div class="group flex flex-col">
 						{resource.data.url ? (
 							<a
@@ -72,7 +79,9 @@ const listResources = resources.filter((r) => !r.data.heroImage);
 							) : (
 								<p class="mt-1 font-serif text-lg text-parchment">{resource.data.title}</p>
 							)}
-							<p class="mt-2 flex-1 text-sm leading-relaxed text-muted">{resource.data.summary}</p>
+							<div class="mt-2 flex-1 space-y-3 text-sm leading-relaxed text-muted [&_em]:text-parchment/80 [&_em]:not-italic [&_strong]:text-parchment">
+								<Content />
+							</div>
 							{resource.data.comingSoon ? (
 								<p class="mt-4 text-xs font-medium text-muted/70">
 									Available {resource.data.comingSoon}

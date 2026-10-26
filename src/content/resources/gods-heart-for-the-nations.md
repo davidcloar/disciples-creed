@@ -8,6 +8,6 @@ heroImage: "/images/gods-heart-nations-cover.png"
 topics: ["global missions", "discipleship", "all nations", "prayer"]
 ---
 
-*God's Heart for the Nations* (30th Anniversary Edition) by Jeff Lewis is a biblical, devotional, and practical work taking readers on a journey of recognition and understanding — with important theological study, people group prayer points, and open-ended questions. It is an excellent resource for small groups and a tool for personal study or one-on-one discipleship.
+In this biblical, devotional, and practical work, Jeff Lewis embarks on a captivating journey of recognition and understanding that the Bible and the Christian faith must be understood within a global context. This study skillfully integrates inductive Bible study, people group prayer points, Scripture memorization and meditation, and open-ended questions, ultimately unveiling God's heart:
 
-Endorsed by J.D. Payne (Samford University), David Platt (McLean Bible Church / Radical), and Chase Bowers (Temple Bible Church).
+*"For the earth will be filled with the knowledge of the glory of the LORD as the waters cover the sea."* — Habakkuk 2:14
