@@ -12,7 +12,7 @@ cta: "Coaching Conversation"
 
 *For a limited time, Disciple's Creed is offering Pro Bono coaching. If God would lead you to give to the ministry, use the QR code below.*
 
-[QR code — coming soon]
+<img src="/images/giving-qr-code.jpg" alt="Giving QR code — ThirteenFiftyTwo.JEL" style="width:160px; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.5);" />
 
 ---
 
