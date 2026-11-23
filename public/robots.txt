@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://disciples-creed.org/sitemap-index.xml
