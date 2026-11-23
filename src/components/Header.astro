@@ -4,6 +4,7 @@ const navItems = [
 	{ href: '/creed', label: 'Convictions' },
 	{ href: '/trainings', label: 'Trainings' },
 	{ href: '/resources', label: 'Resources' },
+	{ href: '/message', label: 'Message', highlight: true },
 ];
 ---
 
@@ -22,7 +23,12 @@ const navItems = [
 		<nav aria-label="Primary" class="flex flex-wrap items-center gap-6 text-sm text-parchment">
 			{
 				navItems.map((item) => (
-					<a href={item.href} class="transition-colors hover:text-gold">
+					<a
+						href={item.href}
+						class={item.highlight
+							? 'rounded-full bg-gold px-3 py-1 text-sm font-medium text-ink transition-all hover:bg-gold-bright'
+							: 'transition-colors hover:text-gold'}
+					>
 						{item.label}
 					</a>
 				))

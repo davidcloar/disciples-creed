@@ -37,17 +37,42 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</section>
 
+	<!-- CREED CARD LIGHTBOX -->
+	<div
+		id="creed-lightbox"
+		class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-6 backdrop-blur-sm"
+		role="dialog"
+		aria-modal="true"
+		aria-label="The Disciple's Creed — enlarged view"
+	>
+		<button
+			id="creed-lightbox-close"
+			class="absolute right-5 top-5 text-white/70 transition-colors hover:text-white"
+			aria-label="Close"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+			</svg>
+		</button>
+		<img
+			src="/images/creed-card.png"
+			alt="The Disciple's Creed Card — full size"
+			class="max-h-[90vh] max-w-full rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.8)]"
+		/>
+	</div>
+
 	<!-- THE CREED CARD: The hook -->
 	<section class="reveal border-t border-gold-deep/20 bg-surface/40 px-6 py-20">
 		<div class="mx-auto flex max-w-4xl flex-col items-center gap-12 sm:flex-row sm:gap-16">
 			<div class="flex-shrink-0">
-				<a href="/creed">
+				<button id="creed-card-trigger" class="group cursor-zoom-in" aria-label="Tap to enlarge the Disciple's Creed">
 					<img
 						src="/images/creed-card.png"
 						alt="The Disciple's Creed Card"
-						class="mx-auto w-56 rounded-xl shadow-[0_16px_48px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_56px_rgba(198,161,92,0.18)] sm:w-64"
+						class="mx-auto w-56 rounded-xl shadow-[0_16px_48px_rgba(0,0,0,0.6)] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_24px_56px_rgba(198,161,92,0.18)] sm:w-64"
 					/>
-				</a>
+					<p class="mt-2 text-center text-xs text-gold/60">Tap to enlarge</p>
+				</button>
 			</div>
 			<div class="text-center sm:text-left">
 				<p class="text-xs font-medium uppercase tracking-widest text-gold">The Disciple's Creed</p>
@@ -56,8 +81,7 @@ import Layout from '../layouts/Layout.astro';
 				</h2>
 				<p class="mt-4 text-base leading-relaxed text-muted">
 					This is the creed behind the name — a confession of identity, mission and resolve for
-					every follower of <strong class="text-parchment font-medium">Jesus Christ.</strong> Every training offered
-					<strong class="text-parchment font-medium">through this ministry is built on these Biblical principles.</strong>
+					every follower of <strong class="text-parchment font-medium">Jesus Christ.</strong> Every training offered <strong class="text-parchment font-medium">through this ministry is built on these Biblical principles.</strong>
 				</p>
 				<a
 					href="/creed"
@@ -91,7 +115,7 @@ import Layout from '../layouts/Layout.astro';
 					</p>
 				</div>
 				<div class="rounded-2xl border border-gold-deep/30 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-[0_8px_24px_rgba(198,161,92,0.07)]">
-					<p class="font-serif text-lg text-parchment">The Disciple Making Church Workshop</p>
+					<p class="font-serif text-lg text-parchment">The Disciple-Making Church Workshop</p>
 					<p class="mt-2 text-base leading-relaxed text-muted">
 						An eight-hour workshop for vocational and lay leaders covering the biblical foundations
 						and practice of disciple-making across eight interactive sessions.
@@ -108,4 +132,30 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 	</section>
+	<script>
+		const lightbox = document.getElementById('creed-lightbox')!;
+		const trigger = document.getElementById('creed-card-trigger')!;
+		const closeBtn = document.getElementById('creed-lightbox-close')!;
+
+		function openLightbox() {
+			lightbox.classList.remove('hidden');
+			lightbox.classList.add('flex');
+			document.body.style.overflow = 'hidden';
+		}
+
+		function closeLightbox() {
+			lightbox.classList.add('hidden');
+			lightbox.classList.remove('flex');
+			document.body.style.overflow = '';
+		}
+
+		trigger.addEventListener('click', openLightbox);
+		closeBtn.addEventListener('click', closeLightbox);
+		lightbox.addEventListener('click', (e) => {
+			if (e.target === lightbox) closeLightbox();
+		});
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape') closeLightbox();
+		});
+	</script>
 </Layout>

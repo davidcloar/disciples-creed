@@ -10,4 +10,4 @@ order: 3
 cta: "Apply for a Cohort"
 ---
 
-The Personal Developmental Cohort offers the chance to establish your own disciple-making group under the guidance of Jeff Lewis. Participants will receive valuable resources on effectively utilizing the Scriptures as the primary and sole source for disciple-making. The mentoring period spans from 6 to 12 months, with limited spots available.
+The Personal Development Cohort offers the chance to establish your own disciple-making group under the guidance of Jeff Lewis. Participants will receive valuable resources on effectively utilizing the Scriptures as the primary and sole source for disciple-making. The mentoring period spans from 6 to 12 months, with limited spots available.

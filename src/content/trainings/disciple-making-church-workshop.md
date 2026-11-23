@@ -1,5 +1,5 @@
 ---
-title: "The Disciple Making Church Workshop"
+title: "The Disciple-Making Church Workshop"
 summary: "An 8-hour interactive workshop designed for church leadership — both vocational and lay — that can be adapted for para-church organizations or other mission-oriented groups."
 audience: "Vocational and lay church leaders"
 format: "workshop"
