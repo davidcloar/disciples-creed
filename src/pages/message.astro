@@ -3,24 +3,114 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-	title="Message from the Founder — Disciple's Creed"
-	description="A personal welcome from Jeff Lewis, Founder and Director of Disciple's Creed."
+	title="Messages from the Founder — Disciple's Creed"
+	description="A video series from Jeff Lewis, Founder and Director of Disciple's Creed — on discipleship, vision, and what it means to follow Jesus."
 >
-	<section class="mx-auto max-w-3xl px-6 py-20 text-center sm:py-28">
-		<p class="text-xs font-medium uppercase tracking-widest text-gold">Welcome from the Founder</p>
+	<!-- Series header -->
+	<section class="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+		<p class="text-xs font-medium uppercase tracking-widest text-gold">Video Series</p>
 		<h1 class="mt-3 font-serif text-4xl font-medium text-parchment sm:text-5xl">
-			A Word from Jeff Lewis
+			Messages from the Founder
 		</h1>
-		<p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted">
-			Founder and Director of Disciple's Creed.
+		<p class="mt-4 max-w-xl text-lg leading-relaxed text-muted">
+			Jeff Lewis — Founder and Director of Disciple's Creed — shares the vision, the convictions,
+			and the call behind this ministry.
 		</p>
-		<div class="mx-auto mt-8 max-w-xl">
-			<video
-				class="w-full rounded-2xl border-2 border-white/80 shadow-[0_16px_48px_rgba(0,0,0,0.6)]"
-				src="/welcome.m4v"
-				controls
-				preload="metadata"
-			></video>
+	</section>
+
+	<!-- Featured episode -->
+	<section class="border-t border-gold-deep/20 bg-surface/40 px-6 py-16">
+		<div class="mx-auto max-w-5xl">
+			<div class="flex flex-col gap-10 sm:flex-row sm:items-start sm:gap-14">
+
+				<!-- Portrait video -->
+				<div class="flex-shrink-0 self-start sm:w-72">
+					<div class="relative">
+						<span class="absolute -left-2 -top-2 z-10 rounded-full bg-gold px-3 py-1 text-xs font-medium text-ink">
+							Episode 1
+						</span>
+						<video
+							class="w-full rounded-2xl border border-gold-deep/40 shadow-[0_16px_48px_rgba(0,0,0,0.6)]"
+							src="/welcome.m4v"
+							controls
+							preload="metadata"
+						></video>
+					</div>
+				</div>
+
+				<!-- Episode info -->
+				<div class="pt-2">
+					<p class="text-xs font-medium uppercase tracking-widest text-gold">Now Playing</p>
+					<h2 class="mt-2 font-serif text-2xl font-medium text-parchment sm:text-3xl">
+						Welcome to Disciple's Creed
+					</h2>
+					<p class="mt-1 text-sm text-muted/70">Jeff Lewis · 4 min 50 sec</p>
+					<p class="mt-4 max-w-md text-base leading-relaxed text-muted">
+						In this first message, Jeff Lewis introduces the Disciple's Creed ministry — the
+						vision, the conviction, and the invitation to join what God is doing through
+						biblical disciple-making.
+					</p>
+					<a
+						href="/connect"
+						class="mt-8 inline-block rounded-full bg-gold px-6 py-3 text-sm font-medium text-ink transition-all hover:bg-gold-bright hover:shadow-[0_0_20px_rgba(198,161,92,0.35)] active:scale-95"
+					>
+						Get Involved →
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Episode list -->
+	<section class="reveal border-t border-gold-deep/20 px-6 py-20">
+		<div class="mx-auto max-w-5xl">
+			<h2 class="font-serif text-2xl font-medium text-parchment sm:text-3xl">All Episodes</h2>
+
+			<div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+				<!-- Episode 1 — current -->
+				<div class="flex gap-4 rounded-2xl border border-gold/40 bg-surface p-4 shadow-[0_0_16px_rgba(198,161,92,0.07)]">
+					<div class="flex h-14 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gold/10 text-gold">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+							<path d="M8 5.14v14l11-7-11-7z" />
+						</svg>
+					</div>
+					<div>
+						<p class="text-xs font-medium text-gold">Episode 1</p>
+						<p class="mt-0.5 font-serif text-sm font-medium text-parchment">Welcome to Disciple's Creed</p>
+						<p class="mt-1 text-xs text-muted/70">4 min 50 sec</p>
+					</div>
+				</div>
+
+				<!-- Episode 2 — coming soon -->
+				<div class="flex gap-4 rounded-2xl border border-gold-deep/20 bg-surface/50 p-4 opacity-50">
+					<div class="flex h-14 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-surface text-muted/40">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
+							<circle cx="12" cy="12" r="10" />
+							<path stroke-linecap="round" d="M12 8v4l3 3" />
+						</svg>
+					</div>
+					<div>
+						<p class="text-xs font-medium text-muted/60">Episode 2</p>
+						<p class="mt-0.5 font-serif text-sm font-medium text-parchment/60">Coming Soon</p>
+					</div>
+				</div>
+
+				<!-- Episode 3 — coming soon -->
+				<div class="flex gap-4 rounded-2xl border border-gold-deep/20 bg-surface/50 p-4 opacity-50">
+					<div class="flex h-14 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-surface text-muted/40">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
+							<circle cx="12" cy="12" r="10" />
+							<path stroke-linecap="round" d="M12 8v4l3 3" />
+						</svg>
+					</div>
+					<div>
+						<p class="text-xs font-medium text-muted/60">Episode 3</p>
+						<p class="mt-0.5 font-serif text-sm font-medium text-parchment/60">Coming Soon</p>
+					</div>
+				</div>
+
+			</div>
 		</div>
 	</section>
 </Layout>
