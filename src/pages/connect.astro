@@ -106,6 +106,22 @@ import Layout from '../layouts/Layout.astro';
 		</form>
 	</section>
 
+	<script>
+		const form = document.querySelector<HTMLFormElement>('form[name="connect"]');
+		form?.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const body = new URLSearchParams(new FormData(form) as any).toString();
+			try {
+				await fetch('/', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+					body,
+				});
+			} catch (_) {}
+			window.location.assign('/success/');
+		});
+	</script>
+
 	<section class="reveal border-t border-gold-deep/20 bg-surface/40 px-6 py-20 text-center">
 		<h2 class="font-serif text-2xl font-medium text-parchment sm:text-3xl">Support the Ministry</h2>
 		<p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted">
